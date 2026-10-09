@@ -1,0 +1,1281 @@
+{
+  "type": "FeatureCollection",
+  "name": "chiayi-lrt-demo",
+  "metadata": {
+    "title": "嘉義市輕軌規劃路廊示範資料",
+    "updated": "2026-10-09",
+    "disclaimer": "本檔為示範用近似資料，不是嘉義市政府或交通部的官方測量成果。藍線除 B01、B13 的角色有公開說明外，中間站名與座標都是沿公開路廊、按約略等距並對照地名推估。路網構想線只連起迄，不代表軌道會走直線。正式圖說公布後，請整份替換這個 GeoJSON。",
+    "blueLine": {
+      "publishedLengthKm": 15.06,
+      "drawnLengthKm": 15.28,
+      "publishedStations": 13,
+      "publishedVertical": "高架約 10.06 公里、平面約 5 公里；10 座高架車站、3 座平面車站。哪三站為平面尚未公布。",
+      "alignment": "臺鐵嘉義站北側 → 自由路 → 世賢路 → 於北港路、世賢路與高鐵大道交會後轉入高鐵大道 → 高鐵東路 → 高鐵嘉義站。",
+      "gaps": [
+        "臺鐵嘉義站北側到自由路的引道約 0.55 公里沒有公布線形，示範以直線接到自由路。",
+        "OpenStreetMap 的高鐵大道中心線在嘉太大橋、埤麻腳附近中斷約 0.98 公里，示範以直線銜接。",
+        "高鐵大道與高鐵東路在站前未連成同一條路名，中間約 0.90 公里以南北向直線接到高鐵東路，終點為高鐵嘉義站站體。"
+      ],
+      "beigangRoad": "交通部新聞稿寫路廊經過北港路。本檔在世賢路、北港路與高鐵大道的交會處轉入高鐵大道，沒有再沿北港路北繞嘉義交流道。描出來的長度約 15.3 公里，接近公布的 15.06 公里。若日後圖說顯示北港路占更長路段，需要重畫。"
+    },
+    "sources": [
+      {
+        "title": "嘉義市政府：輕軌藍線可行性研究地方說明會新聞稿（113年5月29日）",
+        "url": "https://www.chiayi.gov.tw/News_Content.aspx?n=455&s=821667",
+        "used": "起點為未來高架化臺鐵嘉義站北側；沿自由路、世賢路、高鐵大道至高鐵嘉義站；長約 15.06 公里；高架約 10.06 公里、平面約 5 公里；13 站、1 座機廠。"
+      },
+      {
+        "title": "嘉義市政府交通處：高鐵聯外嘉義輕軌計畫範圍",
+        "url": "https://traffic.chiayi.gov.tw/cp.aspx?n=12528",
+        "used": "13 站（10 座高架、3 座平面）與 1 座機廠；B01 銜接臺鐵二樓與國道客運；B13 以空橋銜接高鐵穿堂層。"
+      },
+      {
+        "title": "交通部新聞稿：立法院交通委員會考察嘉義市交通建設",
+        "url": "https://www.motc.gov.tw/ch/app/news_list/view?id=14&module=news&serno=bdc48fa6-783b-4afe-bb9f-7f5ed20b7b66",
+        "used": "路線為東起臺鐵嘉義站，經自由路、世賢路、北港路、高鐵大道，至高鐵嘉義站。可行性研究已送審。"
+      },
+      {
+        "title": "聯合新聞網：高鐵嘉義站聯外輕軌沿途規畫 13 座車站 1 座機廠",
+        "url": "https://udn.com/news/story/7326/8723359",
+        "used": "平面段約 5 公里，因太保埤麻腳遺址、魚寮遺址，以及跨越國道 1 號與嘉南大圳。"
+      },
+      {
+        "title": "城市學：嘉義輕軌與 BRT（引述 2022 年路網）",
+        "url": "https://city.gvm.com.tw/article/111541",
+        "used": "2022 年 9 月軌道整體路網歸納潛力走廊。主線為高鐵—臺鐵；延伸包含高鐵—朴子、臺鐵—蘭潭、臺鐵—港坪、臺鐵—角仔寮。"
+      },
+      {
+        "title": "維基百科：嘉義捷運",
+        "url": "https://zh.wikipedia.org/wiki/%E5%98%89%E7%BE%A9%E6%8D%B7%E9%81%8B",
+        "used": "藍線送審現況、機廠名稱埤麻腳，以及北門、縣政府、朴子、故宮南院、馬稠後等延伸構想與部分公布長度。這些延伸線沒有公開線形。"
+      },
+      {
+        "title": "OpenStreetMap",
+        "url": "https://www.openstreetmap.org/copyright",
+        "used": "自由路、世賢路一段、高鐵大道、高鐵東路的道路中心線，約 2026 年 10 月。"
+      }
+    ]
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            120.4413,
+            23.48055
+          ],
+          [
+            120.441035,
+            23.485496
+          ],
+          [
+            120.440777,
+            23.485522
+          ],
+          [
+            120.438951,
+            23.486923
+          ],
+          [
+            120.43799,
+            23.487659
+          ],
+          [
+            120.437024,
+            23.488399
+          ],
+          [
+            120.435434,
+            23.489557
+          ],
+          [
+            120.43527,
+            23.489686
+          ],
+          [
+            120.434566,
+            23.490282
+          ],
+          [
+            120.432481,
+            23.491878
+          ],
+          [
+            120.431078,
+            23.492953
+          ],
+          [
+            120.430821,
+            23.49315
+          ],
+          [
+            120.429944,
+            23.492177
+          ],
+          [
+            120.429197,
+            23.491369
+          ],
+          [
+            120.428362,
+            23.490674
+          ],
+          [
+            120.426927,
+            23.48911
+          ],
+          [
+            120.426815,
+            23.488987
+          ],
+          [
+            120.424902,
+            23.4869
+          ],
+          [
+            120.423532,
+            23.485405
+          ],
+          [
+            120.422993,
+            23.484817
+          ],
+          [
+            120.422703,
+            23.484501
+          ],
+          [
+            120.421184,
+            23.482137
+          ],
+          [
+            120.420969,
+            23.481818
+          ],
+          [
+            120.42066,
+            23.481969
+          ],
+          [
+            120.418005,
+            23.482772
+          ],
+          [
+            120.416516,
+            23.483215
+          ],
+          [
+            120.414299,
+            23.483891
+          ],
+          [
+            120.412972,
+            23.484303
+          ],
+          [
+            120.412366,
+            23.484483
+          ],
+          [
+            120.409577,
+            23.485337
+          ],
+          [
+            120.405561,
+            23.486543
+          ],
+          [
+            120.402574,
+            23.487432
+          ],
+          [
+            120.399707,
+            23.488302
+          ],
+          [
+            120.39668,
+            23.489216
+          ],
+          [
+            120.395972,
+            23.489396
+          ],
+          [
+            120.394721,
+            23.489588
+          ],
+          [
+            120.394356,
+            23.489619
+          ],
+          [
+            120.394054,
+            23.489618
+          ]
+        ]
+      },
+      "properties": {
+        "id": "blue-elev-east",
+        "name": "藍線（市區至竹村，推估高架）",
+        "kind": "route",
+        "lengthDrawnKm": 6.4,
+        "group": "blue",
+        "status": "feasibility-submitted",
+        "precision": "road-trace",
+        "color": "#1f5fbf",
+        "dashed": false,
+        "vertical": "elevated-inferred",
+        "lengthPublishedKm": 15.06,
+        "summary": "臺鐵嘉義站北側經自由路、世賢路接到高鐵大道。公開計畫全線高架約 10.06 公里；此段標成高架，只是依市區段採高架的說明推估。"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            120.394054,
+            23.489618
+          ],
+          [
+            120.393562,
+            23.489617
+          ],
+          [
+            120.392817,
+            23.489562
+          ],
+          [
+            120.392147,
+            23.489452
+          ],
+          [
+            120.391742,
+            23.489368
+          ],
+          [
+            120.391288,
+            23.489245
+          ],
+          [
+            120.390107,
+            23.488868
+          ],
+          [
+            120.381053,
+            23.486064
+          ],
+          [
+            120.380505,
+            23.485899
+          ],
+          [
+            120.377655,
+            23.484901
+          ],
+          [
+            120.375881,
+            23.484363
+          ],
+          [
+            120.374963,
+            23.484088
+          ],
+          [
+            120.374705,
+            23.483993
+          ],
+          [
+            120.373535,
+            23.483653
+          ],
+          [
+            120.372158,
+            23.483148
+          ],
+          [
+            120.371649,
+            23.483043
+          ],
+          [
+            120.371291,
+            23.482972
+          ],
+          [
+            120.370709,
+            23.482897
+          ],
+          [
+            120.369377,
+            23.482793
+          ],
+          [
+            120.366521,
+            23.482801
+          ],
+          [
+            120.363817,
+            23.482804
+          ],
+          [
+            120.360914,
+            23.482807
+          ],
+          [
+            120.358041,
+            23.482811
+          ],
+          [
+            120.35494,
+            23.482815
+          ],
+          [
+            120.353411,
+            23.482813
+          ],
+          [
+            120.352771,
+            23.482811
+          ],
+          [
+            120.352181,
+            23.482776
+          ],
+          [
+            120.351804,
+            23.482852
+          ],
+          [
+            120.35128,
+            23.482773
+          ],
+          [
+            120.35083,
+            23.482683
+          ],
+          [
+            120.350368,
+            23.482579
+          ],
+          [
+            120.349914,
+            23.482689
+          ],
+          [
+            120.349377,
+            23.482496
+          ],
+          [
+            120.348899,
+            23.482304
+          ],
+          [
+            120.348396,
+            23.482059
+          ]
+        ]
+      },
+      "properties": {
+        "id": "blue-grade",
+        "name": "藍線（埤麻腳至魚寮，推估平面）",
+        "kind": "route",
+        "lengthDrawnKm": 4.8,
+        "group": "blue",
+        "status": "feasibility-submitted",
+        "precision": "road-trace",
+        "color": "#c47b2b",
+        "dashed": false,
+        "vertical": "at-grade-inferred",
+        "lengthPublishedKm": 15.06,
+        "summary": "公開說明有約 5 公里平面段，用來通過遺址，並跨越國道一號與嘉南大圳。樁號未公布，這裡取竹村以西到新埤以東約 4.8 公里作為示意。"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            120.348396,
+            23.482059
+          ],
+          [
+            120.34818,
+            23.481954
+          ],
+          [
+            120.346735,
+            23.481252
+          ],
+          [
+            120.344221,
+            23.480029
+          ],
+          [
+            120.341657,
+            23.478785
+          ],
+          [
+            120.339553,
+            23.477774
+          ],
+          [
+            120.33819,
+            23.477107
+          ],
+          [
+            120.337316,
+            23.476676
+          ],
+          [
+            120.336292,
+            23.476172
+          ],
+          [
+            120.334496,
+            23.475063
+          ],
+          [
+            120.332359,
+            23.474019
+          ],
+          [
+            120.33185,
+            23.473769
+          ],
+          [
+            120.328284,
+            23.472044
+          ],
+          [
+            120.327817,
+            23.471828
+          ],
+          [
+            120.327106,
+            23.471498
+          ],
+          [
+            120.326825,
+            23.471381
+          ],
+          [
+            120.326295,
+            23.471199
+          ],
+          [
+            120.326008,
+            23.471118
+          ],
+          [
+            120.325252,
+            23.470939
+          ],
+          [
+            120.324564,
+            23.470938
+          ],
+          [
+            120.324229,
+            23.470892
+          ],
+          [
+            120.324142,
+            23.46284
+          ],
+          [
+            120.324145,
+            23.462669
+          ],
+          [
+            120.324135,
+            23.462038
+          ],
+          [
+            120.324127,
+            23.461492
+          ],
+          [
+            120.324122,
+            23.461181
+          ],
+          [
+            120.3241,
+            23.459975
+          ],
+          [
+            120.324094,
+            23.459725
+          ],
+          [
+            120.32379,
+            23.45924
+          ]
+        ]
+      },
+      "properties": {
+        "id": "blue-elev-west",
+        "name": "藍線（新埤至高鐵站，推估高架）",
+        "kind": "route",
+        "lengthDrawnKm": 4.08,
+        "group": "blue",
+        "status": "feasibility-submitted",
+        "precision": "road-trace",
+        "color": "#1f5fbf",
+        "dashed": false,
+        "vertical": "elevated-inferred",
+        "lengthPublishedKm": 15.06,
+        "summary": "接近高鐵嘉義站的路段。B13 公開以空橋銜接穿堂層，所以終點視為高架；中間各站型式未公布。"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            120.4413,
+            23.48055
+          ],
+          [
+            120.45466,
+            23.48762
+          ]
+        ]
+      },
+      "properties": {
+        "id": "ext-beimen",
+        "name": "北門延伸（構想）",
+        "kind": "route",
+        "lengthDrawnKm": 1.57,
+        "group": "concept",
+        "status": "network-concept",
+        "precision": "schematic",
+        "color": "#0f766e",
+        "dashed": true,
+        "vertical": "unknown",
+        "lengthPublishedKm": 1.38,
+        "summary": "嘉義車站—北門車站。維基百科列為藍線延伸，約 1.38 公里。圖上是起迄直線，不是軌道線形。"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            120.4413,
+            23.48055
+          ],
+          [
+            120.47895,
+            23.47226
+          ]
+        ]
+      },
+      "properties": {
+        "id": "ext-lantan",
+        "name": "蘭潭走廊（構想）",
+        "kind": "route",
+        "lengthDrawnKm": 3.95,
+        "group": "concept",
+        "status": "network-concept",
+        "precision": "schematic",
+        "color": "#c2410c",
+        "dashed": true,
+        "vertical": "unknown",
+        "lengthPublishedKm": null,
+        "summary": "2022 年路網潛力走廊：臺鐵嘉義站—蘭潭。長度未公布。圖上是起迄直線。"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            120.4413,
+            23.48055
+          ],
+          [
+            120.417778,
+            23.473333
+          ]
+        ]
+      },
+      "properties": {
+        "id": "ext-gangping",
+        "name": "港坪走廊（構想）",
+        "kind": "route",
+        "lengthDrawnKm": 2.53,
+        "group": "concept",
+        "status": "network-concept",
+        "precision": "schematic",
+        "color": "#7c3aed",
+        "dashed": true,
+        "vertical": "unknown",
+        "lengthPublishedKm": null,
+        "summary": "2022 年路網潛力走廊：臺鐵嘉義站—港坪。線形未公布。"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            120.4413,
+            23.48055
+          ],
+          [
+            120.456389,
+            23.467778
+          ]
+        ]
+      },
+      "properties": {
+        "id": "ext-jiaoziliao",
+        "name": "角仔寮走廊（構想）",
+        "kind": "route",
+        "lengthDrawnKm": 2.09,
+        "group": "concept",
+        "status": "network-concept",
+        "precision": "schematic",
+        "color": "#a16207",
+        "dashed": true,
+        "vertical": "unknown",
+        "lengthPublishedKm": null,
+        "summary": "2022 年路網潛力走廊：臺鐵嘉義站—角仔寮。線形未公布。"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            120.32379,
+            23.45924
+          ],
+          [
+            120.292875,
+            23.45847
+          ]
+        ]
+      },
+      "properties": {
+        "id": "ext-county",
+        "name": "縣府延伸（構想）",
+        "kind": "route",
+        "lengthDrawnKm": 3.15,
+        "group": "concept",
+        "status": "network-concept",
+        "precision": "schematic",
+        "color": "#0e7490",
+        "dashed": true,
+        "vertical": "unknown",
+        "lengthPublishedKm": 4.1,
+        "summary": "維基百科：高鐵嘉義站—縣政府，約 4.1 公里。圖上是起迄直線。"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            120.32379,
+            23.45924
+          ],
+          [
+            120.2346,
+            23.46468
+          ]
+        ]
+      },
+      "properties": {
+        "id": "ext-puzi",
+        "name": "朴子走廊（構想）",
+        "kind": "route",
+        "lengthDrawnKm": 9.12,
+        "group": "concept",
+        "status": "network-concept",
+        "precision": "schematic",
+        "color": "#be123c",
+        "dashed": true,
+        "vertical": "unknown",
+        "lengthPublishedKm": 9.5,
+        "summary": "維基百科紫線：高鐵嘉義站—朴子醫院，約 9.5 公里。2022 年路網另有高鐵—朴子走廊。圖上是起迄直線。"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            120.32379,
+            23.45924
+          ],
+          [
+            120.29403,
+            23.47588
+          ]
+        ]
+      },
+      "properties": {
+        "id": "ext-npm",
+        "name": "故宮南院走廊（構想）",
+        "kind": "route",
+        "lengthDrawnKm": 3.55,
+        "group": "concept",
+        "status": "network-concept",
+        "precision": "schematic",
+        "color": "#9f1239",
+        "dashed": true,
+        "vertical": "unknown",
+        "lengthPublishedKm": null,
+        "summary": "維基百科紅線：高鐵嘉義站—故宮南院，長度未定。圖上是起迄直線。"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            120.292875,
+            23.45847
+          ],
+          [
+            120.27524,
+            23.44474
+          ]
+        ]
+      },
+      "properties": {
+        "id": "ext-madou",
+        "name": "馬稠後走廊（構想）",
+        "kind": "route",
+        "lengthDrawnKm": 2.36,
+        "group": "concept",
+        "status": "network-concept",
+        "precision": "schematic",
+        "color": "#4d7c0f",
+        "dashed": true,
+        "vertical": "unknown",
+        "lengthPublishedKm": 3.3,
+        "summary": "維基百科深紫線：縣政府—馬稠後園區，約 3.3 公里。圖上是起迄直線。"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.4413,
+          23.48055
+        ]
+      },
+      "properties": {
+        "id": "B01",
+        "name": "嘉義車站",
+        "kind": "station",
+        "line": "blue",
+        "code": "B01",
+        "officialName": true,
+        "precision": "approximate",
+        "structure": "elevated",
+        "structureCertainty": "documented",
+        "area": "嘉義市西區",
+        "subtitle": "轉乘臺鐵、阿里山林業鐵路",
+        "chainageM": 0,
+        "note": "可行性研究的 B01。公開說明將站體放在未來高架化臺鐵嘉義站北側，以連通道銜接車站二樓與國道客運轉運站。座標取車站北側約 110 公尺，不是月台中心。"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.43551,
+          23.489502
+        ]
+      },
+      "properties": {
+        "id": "B02",
+        "name": "保安",
+        "kind": "station",
+        "line": "blue",
+        "code": "B02",
+        "officialName": false,
+        "precision": "approximate",
+        "structure": "unpublished",
+        "structureCertainty": "unpublished",
+        "area": "嘉義市西區保安里",
+        "subtitle": "自由路",
+        "chainageM": 1273,
+        "note": "站名未公布。位置在自由路東段、保安里，依 13 站平均間距推估。"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.426639,
+          23.488796
+        ]
+      },
+      "properties": {
+        "id": "B03",
+        "name": "北湖",
+        "kind": "station",
+        "line": "blue",
+        "code": "B03",
+        "officialName": false,
+        "precision": "approximate",
+        "structure": "unpublished",
+        "structureCertainty": "unpublished",
+        "area": "嘉義市西區北湖里",
+        "subtitle": "世賢路一段",
+        "chainageM": 2546,
+        "note": "站名未公布。位置在世賢路一段、北湖里，依平均間距推估。"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.418175,
+          23.482721
+        ]
+      },
+      "properties": {
+        "id": "B04",
+        "name": "大溪",
+        "kind": "station",
+        "line": "blue",
+        "code": "B04",
+        "officialName": false,
+        "precision": "approximate",
+        "structure": "unpublished",
+        "structureCertainty": "unpublished",
+        "area": "嘉義市西區大溪里",
+        "subtitle": "高鐵大道",
+        "chainageM": 3819,
+        "note": "站名未公布。位置在高鐵大道東段、大溪里，過了世賢路與北港路交會之後。"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.406322,
+          23.486314
+        ]
+      },
+      "properties": {
+        "id": "B05",
+        "name": "大溪西",
+        "kind": "station",
+        "line": "blue",
+        "code": "B05",
+        "officialName": false,
+        "precision": "approximate",
+        "structure": "unpublished",
+        "structureCertainty": "unpublished",
+        "area": "嘉義市西區大溪里",
+        "subtitle": "高鐵大道",
+        "chainageM": 5093,
+        "note": "站名未公布。仍在大溪里，較靠近大溪厝聚落北側。為與上一站區分，示範名作「大溪西」。"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.39439,
+          23.489616
+        ]
+      },
+      "properties": {
+        "id": "B06",
+        "name": "竹村",
+        "kind": "station",
+        "line": "blue",
+        "code": "B06",
+        "officialName": false,
+        "precision": "approximate",
+        "structure": "unpublished",
+        "structureCertainty": "unpublished",
+        "area": "嘉義市西區竹村里",
+        "subtitle": "高鐵大道",
+        "chainageM": 6366,
+        "note": "站名未公布。位置在竹村里的高鐵大道上。嘉義交流道在此站北方約 1 公里，輕軌並未畫進交流道本身。"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.382443,
+          23.486495
+        ]
+      },
+      "properties": {
+        "id": "B07",
+        "name": "埤麻腳",
+        "kind": "station",
+        "line": "blue",
+        "code": "B07",
+        "officialName": false,
+        "precision": "approximate",
+        "structure": "unpublished",
+        "structureCertainty": "unpublished",
+        "area": "嘉義縣太保市埤鄉里",
+        "subtitle": "嘉太大橋一帶",
+        "chainageM": 7639,
+        "note": "站名未公布。路廊經過埤麻腳與嘉太大橋。公開說明的平面段、遺址與跨越國道、嘉南大圳大致在這一帶。OpenStreetMap 的高鐵大道中心線在此中斷，示範線以直線銜接。"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.370618,
+          23.48289
+        ]
+      },
+      "properties": {
+        "id": "B08",
+        "name": "港尾",
+        "kind": "station",
+        "line": "blue",
+        "code": "B08",
+        "officialName": false,
+        "precision": "approximate",
+        "structure": "unpublished",
+        "structureCertainty": "unpublished",
+        "area": "嘉義縣太保市港尾里",
+        "subtitle": "高鐵大道",
+        "chainageM": 8912,
+        "note": "站名未公布。位置在港尾里的高鐵大道上。"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.358139,
+          23.482811
+        ]
+      },
+      "properties": {
+        "id": "B09",
+        "name": "魚寮",
+        "kind": "station",
+        "line": "blue",
+        "code": "B09",
+        "officialName": false,
+        "precision": "approximate",
+        "structure": "unpublished",
+        "structureCertainty": "unpublished",
+        "area": "嘉義縣太保市",
+        "subtitle": "高鐵大道・魚寮",
+        "chainageM": 10185,
+        "note": "站名未公布。鄰近魚寮聚落。新聞稿指出平面段考量埤麻腳遺址、魚寮遺址。"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.346157,
+          23.480971
+        ]
+      },
+      "properties": {
+        "id": "B10",
+        "name": "新埤",
+        "kind": "station",
+        "line": "blue",
+        "code": "B10",
+        "officialName": false,
+        "precision": "approximate",
+        "structure": "unpublished",
+        "structureCertainty": "unpublished",
+        "area": "嘉義縣太保市新埤里",
+        "subtitle": "高鐵大道",
+        "chainageM": 11458,
+        "note": "站名未公布。位置在新埤里東段。"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.3352,
+          23.475498
+        ]
+      },
+      "properties": {
+        "id": "B11",
+        "name": "新埤南",
+        "kind": "station",
+        "line": "blue",
+        "code": "B11",
+        "officialName": false,
+        "precision": "approximate",
+        "structure": "unpublished",
+        "structureCertainty": "unpublished",
+        "area": "嘉義縣太保市新埤里",
+        "subtitle": "高鐵大道",
+        "chainageM": 12732,
+        "note": "站名未公布。仍在新埤里，位於新埤聚落南方。示範名作「新埤南」，以便和上一站區分。"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.324226,
+          23.470615
+        ]
+      },
+      "properties": {
+        "id": "B12",
+        "name": "後庄",
+        "kind": "station",
+        "line": "blue",
+        "code": "B12",
+        "officialName": false,
+        "precision": "approximate",
+        "structure": "unpublished",
+        "structureCertainty": "unpublished",
+        "area": "嘉義縣太保市後庄里",
+        "subtitle": "近高鐵站前",
+        "chainageM": 14005,
+        "note": "站名未公布。位置在後庄里，高鐵大道接近站前的路口。維基百科整理稱 B12 可能採高架，官方新聞稿未逐站確認。"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.32379,
+          23.45924
+        ]
+      },
+      "properties": {
+        "id": "B13",
+        "name": "高鐵嘉義站",
+        "kind": "station",
+        "line": "blue",
+        "code": "B13",
+        "officialName": true,
+        "precision": "approximate",
+        "structure": "elevated",
+        "structureCertainty": "documented",
+        "area": "嘉義縣太保市",
+        "subtitle": "轉乘台灣高鐵",
+        "chainageM": 15278,
+        "note": "可行性研究的 B13。公開說明配合高鐵穿堂層高程設銜接空橋，並設高鐵驗票閘門。座標取高鐵嘉義站站體。"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.382443,
+          23.486136
+        ]
+      },
+      "properties": {
+        "id": "depot-pima",
+        "name": "埤麻腳機廠",
+        "kind": "depot",
+        "line": "blue",
+        "officialName": false,
+        "precision": "schematic",
+        "area": "嘉義縣太保市埤麻腳",
+        "subtitle": "機廠構想",
+        "note": "維基百科「嘉義捷運」列出藍線機廠為埤麻腳機廠。精確用地未公布。圖上放在路廊經過埤麻腳、嘉太大橋處南側約 40 公尺，只代表地名，不是建築座標。"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.45466,
+          23.48762
+        ]
+      },
+      "properties": {
+        "id": "end-beimen",
+        "name": "北門車站",
+        "kind": "corridor-end",
+        "line": "ext-beimen",
+        "officialName": false,
+        "precision": "schematic",
+        "subtitle": "阿里山林業鐵路北門驛",
+        "note": "維基百科列出藍線延伸：嘉義車站—北門車站，約 1.38 公里。此點為北門驛現況位置，線形未公開。"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.47895,
+          23.47226
+        ]
+      },
+      "properties": {
+        "id": "end-lantan",
+        "name": "蘭潭",
+        "kind": "corridor-end",
+        "line": "ext-lantan",
+        "officialName": false,
+        "precision": "schematic",
+        "subtitle": "蘭潭水庫一帶",
+        "note": "2022 年軌道整體路網的潛力走廊：臺鐵嘉義站—蘭潭。長度與站位未公布。此點為蘭潭水庫附近地標。"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.417778,
+          23.473333
+        ]
+      },
+      "properties": {
+        "id": "end-gangping",
+        "name": "港坪",
+        "kind": "corridor-end",
+        "line": "ext-gangping",
+        "officialName": false,
+        "precision": "schematic",
+        "subtitle": "嘉義市西區港坪",
+        "note": "2022 年路網潛力走廊：臺鐵嘉義站—港坪。線形未公開。此點為港坪聚落地名位置。"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.456389,
+          23.467778
+        ]
+      },
+      "properties": {
+        "id": "end-jiaoziliao",
+        "name": "角子寮",
+        "kind": "corridor-end",
+        "line": "ext-jiaoziliao",
+        "officialName": false,
+        "precision": "schematic",
+        "subtitle": "嘉義市東區角子寮",
+        "note": "2022 年路網潛力走廊：臺鐵嘉義站—角仔寮。公開寫法為角仔寮，圖上對到地圖上的角子寮。線形未公開。"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.292875,
+          23.45847
+        ]
+      },
+      "properties": {
+        "id": "end-county",
+        "name": "嘉義縣政府",
+        "kind": "corridor-end",
+        "line": "ext-county",
+        "officialName": false,
+        "precision": "schematic",
+        "subtitle": "太保市",
+        "note": "維基百科列出藍線延伸：高鐵嘉義站—縣政府，約 4.1 公里。此點為縣政府廳舍，線形未公開。"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.2346,
+          23.46468
+        ]
+      },
+      "properties": {
+        "id": "end-puzi",
+        "name": "朴子醫院",
+        "kind": "corridor-end",
+        "line": "ext-puzi",
+        "officialName": false,
+        "precision": "schematic",
+        "subtitle": "朴子市",
+        "note": "維基百科列出紫線：高鐵嘉義站—朴子醫院，約 9.5 公里。2022 年路網另有高鐵—朴子走廊。線形未公開。"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.29403,
+          23.47588
+        ]
+      },
+      "properties": {
+        "id": "end-npm",
+        "name": "故宮南院",
+        "kind": "corridor-end",
+        "line": "ext-npm",
+        "officialName": false,
+        "precision": "schematic",
+        "subtitle": "太保市",
+        "note": "維基百科列出紅線：高鐵嘉義站—故宮南院，長度未定。線形未公開。"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.27524,
+          23.44474
+        ]
+      },
+      "properties": {
+        "id": "end-madou",
+        "name": "馬稠後園區",
+        "kind": "corridor-end",
+        "line": "ext-madou",
+        "officialName": false,
+        "precision": "schematic",
+        "subtitle": "鹿草鄉",
+        "note": "維基百科列出深紫線：縣政府—馬稠後園區，約 3.3 公里。線形未公開。"
+      }
+    }
+  ]
+}

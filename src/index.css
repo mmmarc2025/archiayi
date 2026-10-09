@@ -1,0 +1,302 @@
+@import "tailwindcss";
+
+@theme inline {
+  --font-sans: "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif;
+  --font-serif: "Noto Serif TC", "Songti TC", "PMingLiU", serif;
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-border: var(--border);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-ring: var(--ring);
+  --color-ink: #172026;
+  --color-paper: #f6f1e7;
+  --color-persimmon: #d4533a;
+}
+
+:root {
+  --background: #f6f1e7;
+  --foreground: #172026;
+  --primary: #1f5fbf;
+  --primary-foreground: #f7fbff;
+  --secondary: #efe6d6;
+  --secondary-foreground: #172026;
+  --muted: #e7dfd0;
+  --muted-foreground: #5e584e;
+  --border: #e0d5c3;
+  --card: #fffaf3;
+  --card-foreground: #172026;
+  --ring: #1f5fbf;
+  color: var(--foreground);
+  background: var(--background);
+  font-family: var(--font-sans);
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  overflow: hidden;
+  background: #172026;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+.leaflet-container {
+  height: 100%;
+  width: 100%;
+  background: #d5dbe3;
+  font-family: var(--font-sans);
+}
+
+.leaflet-div-icon.station-div {
+  background: transparent;
+  border: none;
+}
+
+.pin-wrap {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  transform: translateY(-2px);
+}
+
+.pin-dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 999px;
+  border: 2px solid #fff;
+  box-shadow: 0 1px 4px rgba(23, 32, 38, 0.35);
+  flex: none;
+}
+
+.pin-dot.station {
+  background: #1f5fbf;
+}
+.pin-dot.official {
+  background: #d4533a;
+}
+.pin-dot.end {
+  background: #fff;
+  border-color: #5e584e;
+}
+.pin-dot.depot {
+  background: #c47b2b;
+  border-radius: 3px;
+}
+.pin-dot.active {
+  outline: 3px solid rgba(212, 83, 58, 0.45);
+}
+
+.pin-label {
+  background: rgba(255, 250, 243, 0.95);
+  color: #172026;
+  border-radius: 999px;
+  padding: 2px 7px;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.35;
+  white-space: nowrap;
+  box-shadow: 0 1px 4px rgba(23, 32, 38, 0.18);
+}
+
+.leaflet-top.leaflet-right {
+  top: 4.4rem;
+}
+
+.leaflet-bottom {
+  bottom: 9.2rem;
+}
+
+@media (min-width: 840px) {
+  .leaflet-bottom {
+    bottom: 0.4rem;
+  }
+}
+
+.leaflet-control-attribution {
+  font-size: 10px;
+  max-width: min(70vw, 280px);
+  background: rgba(255, 250, 243, 0.88);
+}
+
+.lrt-popup .leaflet-popup-content-wrapper {
+  border-radius: 16px;
+  background: #fffaf3;
+  color: #172026;
+}
+
+.lrt-popup .leaflet-popup-content {
+  margin: 12px 14px;
+  font-family: var(--font-sans);
+  line-height: 1.45;
+}
+
+.lrt-popup h3 {
+  margin: 0 0 4px;
+  font-family: var(--font-serif);
+  font-size: 18px;
+}
+
+.lrt-popup p {
+  margin: 0 0 8px;
+  font-size: 13px;
+  color: #5e584e;
+}
+
+.lrt-popup .popup-actions {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.lrt-popup button {
+  border: 0;
+  border-radius: 999px;
+  padding: 8px 12px;
+  font: inherit;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.lrt-popup button.primary {
+  background: #1f5fbf;
+  color: white;
+}
+
+.lrt-popup button.secondary {
+  background: #efe6d6;
+  color: #172026;
+}
+
+.ar-label {
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: none;
+  pointer-events: none;
+  transform-origin: 50% 100%;
+  will-change: transform;
+}
+
+.ar-card {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  min-width: 148px;
+  max-width: 230px;
+  padding: 8px 10px;
+  border-radius: 14px;
+  background: rgba(23, 32, 38, 0.78);
+  color: #f6f1e7;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.28);
+}
+
+.ar-card .code {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: #9fd0ff;
+}
+
+.ar-card .name {
+  font-family: var(--font-serif);
+  font-size: 16px;
+  line-height: 1.25;
+}
+
+.ar-card .meta {
+  font-size: 12px;
+  color: rgba(246, 241, 231, 0.82);
+}
+
+.ar-card .badge {
+  display: inline-block;
+  margin-left: 4px;
+  padding: 0 5px;
+  border-radius: 999px;
+  background: rgba(212, 83, 58, 0.9);
+  color: white;
+  font-family: var(--font-sans);
+  font-size: 10px;
+  font-weight: 500;
+  vertical-align: 2px;
+}
+
+.ar-label.is-edge .stem,
+.ar-label.is-here .stem {
+  display: none;
+}
+
+.stem {
+  width: 2px;
+  height: 28px;
+  margin: 0 auto;
+  background: linear-gradient(rgba(159, 208, 255, 0.1), #9fd0ff);
+}
+
+.compass {
+  position: relative;
+  height: 28px;
+  margin: 0 12px;
+  overflow: hidden;
+  mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent);
+}
+
+.compass span {
+  position: absolute;
+  top: 4px;
+  transform: translateX(-50%);
+  font-size: 11px;
+  color: rgba(246, 241, 231, 0.72);
+}
+
+.compass span.major {
+  color: white;
+  font-weight: 700;
+  font-size: 13px;
+}
+
+.compass .needle {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 2px;
+  height: 8px;
+  transform: translateX(-50%);
+  background: #d4533a;
+  border-radius: 2px;
+}
+
+.sky {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(120% 80% at 50% 100%, rgba(196, 123, 43, 0.28), transparent 46%),
+    linear-gradient(#243246 0%, #3d5168 42%, #6d5a55 78%, #2a241f 100%);
+}
+
+.sky p {
+  position: absolute;
+  left: 16px;
+  right: 16px;
+  top: 42%;
+  text-align: center;
+  color: rgba(246, 241, 231, 0.88);
+  font-size: 14px;
+  line-height: 1.55;
+}
