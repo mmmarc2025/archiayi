@@ -1,5 +1,7 @@
 import { useEffect, useRef, useState } from "react";
+import { StationField } from "./StationField";
 import { formatDistance, nearestOnSamples, projectPoint, wrap180 } from "../lib/geo";
+import { eastNorth, projectWorld, stationModelPoses, verticalFov } from "../lib/spatial";
 import type { Fix, Place, RouteModel } from "../lib/types";
 
 interface ArPaneProps {
@@ -150,6 +152,10 @@ export function ArPane({
       let here: string | null = null;
       let edgeRow = 0;
       if (view.fix) {
+        const vFov = verticalFov(view.hFov, w, h);
+        const poseById = new Map(
+          stationModelPoses(view.places, view.fix.lat, view.fix.lon, vFov).map((pose) => [pose.id, pose]),
+        );
         for (const place of view.places) {
           const node = nodes.current.get(place.id);
           if (!node) continue;
@@ -177,7 +183,25 @@ export function ArPane({
             continue;
           }
           if (projected.dist < 28 && place.kind === "station") here = `${place.code ?? ""} ${place.name}`.trim();
-          const inView = Math.abs(projected.rel) < view.hFov * 0.46 && projected.y > 40 && projected.y < h - 20;
+          const pose = poseById.get(place.id);
+          let anchorX = projected.x;
+          let anchorY = projected.y;
+          if (pose) {
+            const { east, north } = eastNorth(place.lat, place.lon, view.fix.lat, view.fix.lon);
+            const crown = projectWorld({
+              east,
+              north,
+              height: pose.crownWorldY,
+              heading: view.heading,
+              pitch: view.pitch,
+              width: w,
+              heightPx: h,
+              hFov: view.hFov,
+            });
+            anchorX = crown.x;
+            anchorY = Math.min(h - 28, Math.max(78, crown.y));
+          }
+          const inView = Math.abs(projected.rel) < view.hFov * 0.46 && anchorY > 20 && anchorY < h - 12;
           const nearEdge = projected.dist < 800 && Math.abs(projected.rel) < 120;
           if (!inView && !nearEdge) {
             node.style.display = "none";
@@ -187,7 +211,7 @@ export function ArPane({
           node.style.zIndex = String(2000 - Math.round(projected.dist));
           if (inView) {
             node.classList.remove("is-edge");
-            node.style.transform = `translate3d(${projected.x}px, ${projected.y}px, 0) translate(-50%, -100%)`;
+            node.style.transform = `translate3d(${anchorX}px, ${anchorY}px, 0) translate(-50%, -100%)`;
           } else {
             node.classList.add("is-edge");
             const x = projected.rel > 0 ? w - 28 : 28;
@@ -249,6 +273,7 @@ export function ArPane({
       </div>
       <video ref={videoRef} className="absolute inset-0 h-full w-full object-cover" autoPlay playsInline muted />
       <canvas ref={canvasRef} className="pointer-events-none absolute inset-0 h-full w-full" />
+      <StationField places={places} fix={fix} heading={heading} pitch={pitch} hFov={hFov} />
       <div className="pointer-events-none absolute inset-0">
         {places.map((place) => (
           <div

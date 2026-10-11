@@ -10,6 +10,7 @@ export interface Place {
   code?: string;
   officialName: boolean;
   precision: "approximate" | "schematic";
+  structure?: "elevated" | "at-grade" | "unpublished";
   area?: string;
   subtitle?: string;
   note: string;

@@ -61,6 +61,8 @@ export async function loadNetwork(): Promise<Network> {
       code: str(props.code) || undefined,
       officialName: Boolean(props.officialName),
       precision: props.precision === "schematic" ? "schematic" : "approximate",
+      structure:
+        props.structure === "elevated" || props.structure === "at-grade" ? props.structure : "unpublished",
       area: str(props.area) || undefined,
       subtitle: str(props.subtitle) || undefined,
       note: str(props.note),
@@ -100,7 +102,8 @@ export function poseForPlace(place: Place, places: Place[], routes: RouteModel[]
         index <= 0
           ? wrap360(bearing(place.lat, place.lon, anchor.lat, anchor.lon) + 180)
           : bearing(place.lat, place.lon, anchor.lat, anchor.lon);
-      const stand = destination(place.lat, place.lon, backward, 58);
+      const along = destination(place.lat, place.lon, backward, 46);
+      const stand = destination(along.lat, along.lon, wrap360(backward + 90), 14);
       return {
         ...stand,
         heading: bearing(stand.lat, stand.lon, place.lat, place.lon),

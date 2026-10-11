@@ -2,6 +2,7 @@ import { Camera, Compass, Info, LocateFixed, Map as MapIcon } from "lucide-react
 import { useEffect, useMemo, useRef, useState } from "react";
 import { ArPane } from "./components/ArPane";
 import { MapPane } from "./components/MapPane";
+import { StationDiorama } from "./components/StationDiorama";
 import { Button } from "./components/ui/button";
 import { Dialog, DialogContent } from "./components/ui/dialog";
 import { haversine, lookPhrase, smoothAngle, wrap360 } from "./lib/geo";
@@ -50,7 +51,7 @@ export default function App() {
   const [headingMode, setHeadingMode] = useState<"device" | "manual">("manual");
   const [manualHeading, setManualHeading] = useState(0);
   const [deviceHeading, setDeviceHeading] = useState<number | null>(null);
-  const [pitch, setPitch] = useState(-14);
+  const [pitch, setPitch] = useState(-6);
   const [offset, setOffset] = useState(0);
   const [hFov, setHFov] = useState(67);
   const [panToken, setPanToken] = useState(0);
@@ -304,6 +305,15 @@ export default function App() {
   const farAway =
     !!fix && !fix.simulated && haversine(fix.lat, fix.lon, 23.48, 120.44) > 25_000;
 
+  const featuredStation = useMemo(() => {
+    if (!network) return null;
+    if (fix?.placeId) {
+      const chosen = network.places.find((place) => place.id === fix.placeId && place.kind === "station");
+      if (chosen) return chosen;
+    }
+    return nearest?.place ?? null;
+  }, [network, fix?.placeId, nearest]);
+
   const stations = network?.places.filter((place) => place.kind === "station") ?? [];
   const ends = network?.places.filter((place) => place.kind !== "station") ?? [];
 
@@ -353,6 +363,17 @@ export default function App() {
           <Info />
         </Button>
       </header>
+
+      {mode === "map" && featuredStation && (
+        <div className="absolute right-3 bottom-[19rem] z-[1100] md:bottom-4 md:right-4">
+          <StationDiorama
+            key={featuredStation.id}
+            name={featuredStation.name}
+            code={featuredStation.code ?? ""}
+            elevated={featuredStation.structure === "elevated"}
+          />
+        </div>
+      )}
 
       {mode === "map" && (
         <div className="pointer-events-none absolute left-3 top-[4.6rem] z-[1100] flex max-w-[16rem] flex-col gap-2">
@@ -584,6 +605,9 @@ export default function App() {
               <p>{network.meta.blueLine.publishedVertical}</p>
               <p>
                 實境裡的路線會畫得比真實透視更「貼近地面」，否則在手機上只剩貼著地平線的一條細線。方向與左右位置仍依羅盤和座標計算。
+              </p>
+              <p>
+                近處的車站會疊一座示意的立體輕軌站：月台、雨棚立柱、站名牌，以及一節輕軌車廂。模型沿著路線朝向，座標對準該站，距離遠時會放大並簡化，方便在手機上辨認。這不是真實站體。站名與距離的文字標籤仍會留著。
               </p>
               <p>{network.meta.blueLine.beigangRoad}</p>
               <ul className="list-disc space-y-1 pl-5 text-muted-foreground">
